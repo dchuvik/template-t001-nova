@@ -4,7 +4,6 @@ import Section from "@components/ui/layout/Section.astro";
 import Container from "@components/ui/layout/Container.astro";
 import Heading from "@components/ui/atoms/Heading.astro";
 import Text from "@components/ui/atoms/Text.astro";
-import jsonData from "@data/sections/steps-numbered.json";
 
 type Step = {
   num: string;
@@ -13,26 +12,33 @@ type Step = {
 };
 
 export interface Props {
+  sectionId?: string;
+  eyebrow?: string;
+  headingLines?: string[];
+  steps?: Step[];
   /* * Content language from JSON. PL is the default language, EN is the English equivalent. */
   locale?: "pl" | "en";
   /* * Full section content ({ en, en }). Props override JSON. */
-  data?: typeof jsonData;
+
   /* * Section header tag: 'h2' by default, 'h1' when the block is the first section of the page without hero (SEO). */
   headingTag?: string;
 }
 
 const props = Astro.props as Props;
-const locale = props.locale ?? "pl";
 const headingTag = props.headingTag ?? "h2";
 // Why: the pattern "props.data || jsonData[locale]" (as in AboutExpertBlock), so that the block
 // works independently with the section data, and PageBuilder or CMS can overwrite the content.
 // When the date comes from the outside, we choose the language variant (pl/en) in it, as JSON
 // does.
-const t = (props.data ? props.data[locale] : jsonData[locale]) || jsonData.pl;
+const t = {
+  eyebrow: props.eyebrow,
+  headingLines: props.headingLines ?? [],
+  steps: props.steps ?? [],
+};
 const steps = (t.steps ?? []) as Step[];
 ---
 
-<Section tone="base" class:list={["border-t border-brand-dark/10"]}>
+<Section id={props.sectionId} tone="base" class:list={["border-t border-brand-dark/10"]}>
   <Container>
     <div class="mx-auto max-w-4xl text-center">
       {/* Why: Why: accent-label from ui-type-accent-label token, but color taken

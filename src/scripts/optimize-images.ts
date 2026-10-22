@@ -2,20 +2,14 @@ import sharp from 'sharp';
 import fs from 'fs';
 import path from 'path';
 
-// The pipeline includes project source images and optional uploaded media.
-// Originals stay in public/assets/uploads so existing URLs keep working after
-// derivatives are generated.
+// Optimize project sources, uploaded media, and PNG/JPEG photos added directly
+// to public/assets/images. Keep originals so existing content URLs stay valid.
 const PROJECT_ROOT = process.cwd();
 const SOURCES = [
   {
-    id: 'raw',
-    inputDir: path.join(PROJECT_ROOT, 'src/assets/raw'),
+    id: 'public-images',
+    inputDir: path.join(PROJECT_ROOT, 'public/assets/images'),
     outputDir: path.join(PROJECT_ROOT, 'public/assets/images'),
-  },
-  {
-    id: 'uploads',
-    inputDir: path.join(PROJECT_ROOT, 'public/assets/uploads'),
-    outputDir: path.join(PROJECT_ROOT, 'public/assets/upload-derivatives'),
   },
 ] as const;
 
@@ -103,6 +97,9 @@ async function processDirectory(
 
     const ext = path.extname(item).toLowerCase();
     if (!['.jpg', '.jpeg', '.png', '.webp', '.avif'].includes(ext)) continue;
+    // Photos added directly to public keep their original URL. Process only
+    // originals here so generated WebP/AVIF files are never processed again.
+    if (source.id === 'public-images' && !['.jpg', '.jpeg', '.png'].includes(ext)) continue;
 
     const relativePath = path.relative(source.inputDir, directory);
     const baseName = slugify(path.basename(item, ext));
@@ -131,8 +128,8 @@ async function processDirectory(
       filePath: getOutputPath(source, size, format.extension, relativePath, baseName),
     })));
 
-    // We only remove old derivatives of the same source. Original upload files
-    // they are in a different directory and never go to this cleanup branch.
+    // Only obsolete WebP/AVIF derivatives are cleanup targets. Public PNG/JPEG
+    // originals and uploaded source files are preserved.
     const expectedPaths = new Set(allTargets.map((target) => target.filePath));
     for (const staleTarget of SIZES.flatMap((size) => FORMATS.map((format) => ({
       ...size,

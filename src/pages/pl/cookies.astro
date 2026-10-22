@@ -1,14 +1,9 @@
 ---
-import { getLegalLayout } from "@/config/template-layouts";
-
-const LegalLayout = await getLegalLayout();
-import company from "@data/global/company.json";
+import LegalLayout from "@layouts/LegalLayout.astro";
 import cookiesContent from "@/content/legal/cookies-pl.json";
 import { legalBodyToHtml } from "@utils/legal-body-to-html";
 
-const injectData = (text: string) => text
-  .replace(/{{COMPANY_NAME}}/g, company.name)
-  .replace(/{{SITE_URL}}/g, company.siteUrl || "nasza-strona.pl");
+const injectData = (text: string) => text;
 
 const html = legalBodyToHtml(injectData(cookiesContent.body));
 const title = cookiesContent.title;

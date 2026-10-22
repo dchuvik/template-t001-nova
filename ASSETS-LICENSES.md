@@ -1,17 +1,11 @@
-# Nova, asset licenses
+﻿# Asset sources
 
-The image files in `public/assets/images/t001-nova/` are demonstration assets for the Nova preview. Before using Nova in a commercial website, replace them with assets for which the buyer or final client has documented usage rights.
+The original Nova template license and WebScale attribution are retained in `LICENSE.md` and the site footer.
 
-The local font files and icon package must be checked against their current upstream licenses before redistribution.
+- Photos: the user supplied `hero.png`, `two-key-fobs.png` and `right-car-keys.png`. WebP/AVIF files beside them are generated responsive versions. Template demonstration photos have been removed.
+- Branding: `public/icon.svg` and `public/og-image.svg` are the editable Local Key source graphics. The favicon and sharing PNG files are generated from them.
+- Fonts: Satoshi font files were included with the original template and remain self-hosted in `public/fonts/`.
+- Icons: the Phosphor font and generated CSS come from `@phosphor-icons/web`; its license is retained in `public/licenses/phosphor.txt`.
+- Smooth scrolling: `public/js/lenis-lib.min.js` is a vendored Lenis library. Its license is retained in `public/licenses/lenis.txt`.
 
-The buyer is responsible for checking the license of every image, font, icon and video, replacing demonstration assets where necessary, and obtaining permission for trademarks, logos and people shown in images.
-
-## Asset replacement checklist
-
-- [ ] Hero image replaced.
-- [ ] Project images replaced.
-- [ ] Team and avatar images replaced.
-- [ ] Open Graph image checked.
-- [ ] Favicon and logo checked.
-- [ ] Font licenses checked.
-- [ ] No private client asset remains in the project.
+Retain upstream notices when redistributing these assets, and use replacement photos and branding for which the business has permission.

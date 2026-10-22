@@ -1,22 +1,11 @@
-# Nova Visual Profile
+﻿# Local Key design tokens
 
-This repository publishes one coherent visual profile: `nova.md`. The file
-describes the color, spacing, radius, typography and animation tokens used by
-the Nova template components.
+`nova.md` defines the site's color, spacing, radius, typography and animation tokens. The existing `nova` identifier is retained in selectors for compatibility with the original design.
 
-## Synchronization
+After changing the tokens, run:
 
-After changing tokens, run:
-
-```bash
+```text
 npm run design:sync
-npm run design:lint
 ```
 
-The script synchronizes the profile to `src/styles/themes.css`,
-`src/styles/tailwind-theme.css` and `tailwind.tokens.js`. Generated files remain
-in the repository so builds are reproducible after cloning.
-
-Nova is the only profile supported by the site and the internal Studio. New
-visual directions should be developed in a separate repository or as a new
-template, rather than as a hidden switch in this product.
+This updates `src/styles/themes.css` and `src/styles/tailwind-theme.css`. Keep these generated styles in the repository so builds remain reproducible.

@@ -1,11 +1,11 @@
 /// <reference types="astro/client" />
 
 interface Window {
-  WebScaleCookies?: {
-    openSettings: () => void;
-  };
   __floatingBarInitialized?: boolean;
   __lenis?: {
+    isStopped: boolean;
+    stop: () => void;
+    start: () => void;
     scrollTo: (target: number) => void;
   };
 }

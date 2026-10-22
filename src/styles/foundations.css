@@ -43,54 +43,6 @@ html {
   }
 }
 
-/*
- * The global marquee runs on one track containing two identical groups.
- * The 50% shift ends exactly at the beginning of the second group, that's why
- * the animation may loop without a visible skip.
- */
-@keyframes ui-marquee-scroll {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(-50%, 0, 0);
-  }
-}
-.ui-marquee {
-  --ui-marquee-duration: 46s;
-  --ui-marquee-gap: 1.5rem;
-  --ui-marquee-padding: 0.75rem;
-  overflow: hidden;
-}
-
-.ui-marquee__track {
-  display: flex;
-  width: max-content;
-  animation: ui-marquee-scroll var(--ui-marquee-duration) linear infinite;
-  will-change: transform;
-}
-
-.ui-marquee__group {
-  display: flex;
-  flex-shrink: 0;
-  gap: var(--ui-marquee-gap);
-  padding-inline: var(--ui-marquee-padding);
-}
-
-@media (hover: hover) {
-  .ui-marquee:hover .ui-marquee__track,
-  .ui-marquee:focus-within .ui-marquee__track {
-    animation-play-state: paused;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .ui-marquee__track {
-    animation: none;
-    transform: translate3d(0, 0, 0);
-  }
-}
-
 button {
   min-height: 44px;
   min-width: 44px;
@@ -135,19 +87,9 @@ dialog[open] {
     --ui-nav-drawer-root-z: 13000;
   }
 
-  [x-cloak] {
-    display: none !important;
-  }
-
-  /* Studio: scroll targets - scroll-margin + natywny scroll (scroll-behavior w Layout) */
-  .ui-studio-scroll-target {
-    scroll-margin-top: calc(var(--site-header-height) + 0.75rem);
-  }
-  * {
-    @apply border-border outline-ring/50;
-  }
   body {
-    @apply bg-background text-foreground;
+    background: var(--color-background);
+    color: var(--color-on-background);
   }
   html {
     @apply font-sans;

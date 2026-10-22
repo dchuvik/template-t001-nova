@@ -53,8 +53,3 @@
   from = "/:path((?!.*\\.\\w+$).*)"
   to = "/:path/"
   status = 200
-
-[[redirects]]
-  from = "/studio"
-  to = "/404/"
-  status = 404

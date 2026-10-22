@@ -16,7 +16,6 @@
 [data-theme="nova"] .ui-type-section-title,
 [data-theme="nova"] .ui-type-section-subtitle,
 [data-theme="nova"] .ui-type-feature-title,
-[data-theme="nova"] .ui-type-nav-link,
 [data-theme="nova"] .ui-type-cta-label {
   font-family: var(--font-heading) !important;
 }

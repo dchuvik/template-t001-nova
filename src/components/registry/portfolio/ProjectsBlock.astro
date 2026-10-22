@@ -4,21 +4,18 @@ import Container from "@components/ui/layout/Container.astro";
 import Heading from "@components/ui/atoms/Heading.astro";
 import Text from "@components/ui/atoms/Text.astro";
 import SmartImage from "@components/ui/atoms/SmartImage.astro";
-import jsonData from "@data/sections/nova-projects.json";
-import { ACTIVE_TEMPLATE } from "@config/template";
 
 type Project = { category: string; title: string; image: string; alt: string };
-interface Props { title?: string; description?: string; linkLabel?: string; linkHref?: string; items?: Project[]; class?: string; }
+interface Props { sectionId?: string; title?: string; description?: string; linkLabel?: string; linkHref?: string; items?: Project[]; class?: string; }
 const props = Astro.props as Props;
-const fallback = ACTIVE_TEMPLATE === "nova" ? undefined : jsonData;
-const title = props.title ?? fallback?.title;
-const description = props.description ?? fallback?.description;
-const linkLabel = props.linkLabel ?? fallback?.linkLabel;
-const linkHref = props.linkHref ?? fallback?.linkHref;
-const items = props.items ?? fallback?.items ?? [];
+const title = props.title;
+const description = props.description;
+const linkLabel = props.linkLabel;
+const linkHref = props.linkHref;
+const items = props.items ?? [];
 ---
 
-<Section id="realizacje" tone="page" class:list={["relative z-[1] -mt-4 rounded-t-[var(--rounded-lg)] pb-16", props.class]}>
+<Section id={props.sectionId ?? "realizacje"} tone="page" class:list={["relative z-[1] -mt-4 rounded-t-[var(--rounded-lg)] pb-16", props.class]}>
   <Container class="w-full max-w-none px-[clamp(1.5rem,5vw,5rem)]">
     <div class="projects-intro">
       <div>
@@ -34,11 +31,11 @@ const items = props.items ?? fallback?.items ?? [];
     </div>
 
     <div class="projects-grid">
-      {items.map((item) => (
+      {items.map((item, index) => (
         <a class="project-card__link group" href={linkHref}>
           <article class="project-card">
           <figure>
-            <SmartImage src={item.image} alt={item.alt} width={1280} height={800} loading="lazy" class="transition-transform duration-[1200ms] ease-out group-hover:scale-[1.02] motion-reduce:transition-none" />
+            <SmartImage src={item.image} alt={item.alt} width={1280} height={800} loading="lazy" sizes={index === 0 ? "(min-width: 48rem) 54vw, 90vw" : "(min-width: 48rem) 40vw, 90vw"} class="transition-transform duration-[1200ms] ease-out group-hover:scale-[1.02] motion-reduce:transition-none" />
             <figcaption class="project-card__overlay">
               <Heading tag="h3" variant="feature-title" class="project-card__title">{item.title}</Heading>
               <span class="project-card__arrow overflow-hidden" aria-hidden="true">
@@ -115,11 +112,10 @@ const items = props.items ?? fallback?.items ?? [];
 
   .project-card figure {
     position: relative;
-    display: grid;
+    display: block;
     aspect-ratio: 3 / 2;
     margin: 0;
     overflow: hidden;
-    place-items: center;
     border-radius: var(--ui-radius-lg);
     background: var(--color-surface-container-low);
   }
@@ -131,8 +127,14 @@ const items = props.items ?? fallback?.items ?? [];
     height: 100%;
   }
 
+  .project-card figure :global(picture) {
+    position: absolute;
+    inset: 0;
+  }
+
   .project-card figure :global(img) {
     object-fit: cover;
+    object-position: center center;
   }
 
   .project-card__overlay {

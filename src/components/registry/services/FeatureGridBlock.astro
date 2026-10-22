@@ -4,11 +4,11 @@
 // of the starter kit, and the client data (lean industry) was replaced with general PL/EN
 // content to make the block suitable for the library.
 import Section from "@components/ui/layout/Section.astro";
+import Container from "@components/ui/layout/Container.astro";
 import SectionHeader from "@components/ui/molecules/SectionHeader.astro";
 import Heading from "@components/ui/atoms/Heading.astro";
 import Text from "@components/ui/atoms/Text.astro";
 import Icon from "@components/ui/atoms/Icon.astro";
-import jsonData from "@data/sections/feature-grid.json";
 
 export interface FeatureGridItem {
 	/** Nazwa ikony Phosphor bez prefiksu, np. "gear" → ph ph-gear. */
@@ -18,27 +18,28 @@ export interface FeatureGridItem {
 }
 
 interface Props {
+  sectionId?: string;
 /** The contents of the section; override the default JSON. */
-	data?: typeof jsonData;
+	data: { heading: string; intro: string; items: FeatureGridItem[] };
 /** Content language with JSON. EN is the default language, EN is the equivalent of English. */
 	locale?: "pl" | "en";
 	/** Section heading tag: 'h2' by default, 'h1' when the block is the first section without hero (SEO). */
 	headingTag?: string;
 }
 
-const { data, locale = "pl", headingTag = "h2" } = Astro.props;
+const { data, headingTag = "h2", sectionId } = Astro.props;
 
 // Why: "props || json" pattern (as in AboutLawBlock) to make the block work alone with the
 // section data, and PageBuilder or CMS may have overwritten the content.
-const t = (data ?? jsonData[locale] ?? jsonData.pl) as typeof jsonData["pl"];
+const t = data;
 const items = t.items ?? [];
 ---
 
 <!--
   FeatureGridBlock: a network of service cards / features; each card, icon, title, description (ui-bg-surface + ui-elevation-soft). No reveal: animations adds a page.
 -->
-<Section tone="page">
-	<div class="ui-container">
+<Section id={sectionId} tone="page">
+	<Container>
 		<SectionHeader
 			title={t.heading}
 			description={t.intro}
@@ -62,5 +63,5 @@ const items = t.items ?? [];
 				))
 			}
 		</div>
-	</div>
+	</Container>
 </Section>

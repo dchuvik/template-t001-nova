@@ -1,28 +1,33 @@
 {
   "pl": {
     "page": {
-      "title": "Nova, strony internetowe dla ambitnych marek",
-      "description": "Tworzymy nowoczesne strony internetowe, które wzmacniają wizerunek, przyciągają klientów i wspierają rozwój biznesu.",
-      "heading": "Nowe możliwości dla ambitnych marek"
-    },
-    "demoBanner": {
-      "label": "Ten template został zaprojektowany i wdrożony przez WebScale.",
-      "downloadLabel": "Pobierz template",
-      "downloadHref": "https://github.com/Wiktorkulas51/template-t001-nova",
-      "customizeLabel": "Zamów customizację",
-      "customizeHref": "https://webscale.pl/?utm_source=nova-demo&utm_medium=banner&utm_campaign=t001-nova-custom"
+      "title": "Klucze samochodowe i auto locksmith w Elbridge NY | Local Key",
+      "description": "Local Key w Elbridge, NY: dorabianie kluczy i programowanie pilotów samochodowych. Szeroki wybór na miejscu. Obsługujemy Syracuse i okolice.",
+      "heading": "Klucze i piloty samochodowe w Elbridge, NY"
     },
     "navigation": {
       "menu": [
-        { "label": "O nas", "href": "#zespol" },
-        { "label": "Usługi", "href": "#uslugi" },
-        { "label": "Realizacje", "href": "#realizacje" },
-        { "label": "Opinie", "href": "#opinie" }
+        {
+          "label": "Usługi",
+          "href": "/pl/#services"
+        },
+        {
+          "label": "Klucze na miejscu",
+          "href": "/pl/#keys-in-stock"
+        },
+        {
+          "label": "Obszar obsługi",
+          "href": "/pl/#service-area"
+        },
+        {
+          "label": "Pytania",
+          "href": "/pl/#faq"
+        }
       ],
       "cta": {
-        "label": "Rozpocznij projekt",
-        "hoverLabel": "Porozmawiajmy",
-        "href": "#kontakt"
+        "label": "Umów wizytę",
+        "hoverLabel": "Ustalmy termin",
+        "href": "#schedule-appointment"
       },
       "aria": {
         "menuOpen": "Otwórz menu nawigacji",
@@ -35,135 +40,288 @@
     },
     "sections": {
       "nova-hero-wireframe": {
-        "eyebrow": "STRATEGIA / DESIGN / TECHNOLOGIA",
-        "heading": "Nowe możliwości dla",
-        "headingAccent": "ambitnych marek",
-        "description": "Tworzymy nowoczesne strony internetowe, które wzmacniają wizerunek, przyciągają klientów i realnie wspierają rozwój biznesu.",
-        "primaryCTA": { "label": "Rozpocznij projekt", "href": "#kontakt" },
-        "secondaryCTA": { "label": "Poznaj nas", "href": "#zespol" },
-        "trustedBy": "Zaufali nam",
-        "trustItems": ["MODO", "LUMI", "KOVO", "NOMA", "ASPEKT"],
-        "image": "/assets/images/t001-nova/t001-nova-hero.webp",
-        "imageAlt": "Strateg pracujący przy laptopie",
+        "eyebrow": "LOKALNY AUTO LOCKSMITH / ELBRIDGE, NY",
+        "heading": "Klucze i piloty w",
+        "headingAccent": "Elbridge, NY.",
+        "description": "Twój lokalny specjalista od kluczy samochodowych: dorabianie, wymiana i programowanie pilotów. Obsługujemy niemal każdą markę i model oraz mamy szeroki wybór kluczy na miejscu. Działamy w Syracuse i okolicach Central New York.",
+        "primaryCTA": {
+          "label": "Umów wizytę",
+          "href": "#schedule-appointment"
+        },
+        "secondaryCTA": {
+          "label": "Poznaj nasze usługi",
+          "href": "/pl/#services"
+        },
+        "trustedBy": "Obsługujemy",
+        "trustItems": [
+          "ELBRIDGE",
+          "SYRACUSE",
+          "OSWEGO",
+          "I OKOLICE"
+        ],
+        "image": "/assets/images/hero.png",
+        "imageAlt": "Klucze i piloty samochodowe obok urządzenia do programowania i maszyny do cięcia kluczy",
         "stats": [
-          { "value": "2000+", "label": "Zrealizowanych projektów" },
-          { "value": "10+", "label": "Lat doświadczenia" },
-          { "value": "800+", "label": "Godzin pracy nad produktem" },
-          { "value": "150M+", "label": "Przychodu u naszych klientów" }
+          {
+            "value": "Cięcie",
+            "label": "Klucze samochodowe"
+          },
+          {
+            "value": "Klucze",
+            "label": "Programowanie kluczy i pilotów"
+          },
+          {
+            "value": "Na miejscu",
+            "label": "Szeroki wybór kluczy i pilotów"
+          },
+          {
+            "value": "Lokalnie",
+            "label": "Elbridge i okolice Syracuse"
+          }
         ]
       },
       "nova-projects": {
-        "title": "Pomysły zamieniamy w realne efekty",
-        "description": "Łączymy strategiczne myślenie, dopracowany design i nowoczesne technologie, aby tworzyć strony, które nie tylko wyglądają dobrze, ale przede wszystkim działają.",
-        "linkLabel": "Zobacz realizacje",
-        "linkHref": "#realizacje",
+        "sectionId": "keys-in-stock",
+        "title": "Właściwy klucz zaczyna się tutaj.",
+        "description": "Mamy na miejscu szeroki wybór kluczy i pilotów samochodowych. Podaj nam swój samochód, a sprawdzimy odpowiedni klucz zapasowy lub pilot zastępczy.",
+        "linkLabel": "Umów wizytę",
+        "linkHref": "#schedule-appointment",
         "items": [
-          { "category": "Strony internetowe", "title": "Marka premium z nową stroną", "image": "/assets/images/t001-nova/t001-nova-project-laptop.webp", "alt": "Laptop z projektem strony internetowej" },
-          { "category": "Wizerunek marki", "title": "Nowy wizerunek dla ambitnej marki", "image": "/assets/images/t001-nova/t001-nova-project-building.webp", "alt": "Nowoczesny budynek jako przykład realizacji" }
+          {
+            "category": "KLUCZE SAMOCHODOWE",
+            "title": "Zapasowy klucz. O jedno zmartwienie mniej.",
+            "image": "/assets/images/two-key-fobs.png",
+            "alt": "Dwa piloty samochodowe trzymane przed zaparkowanym samochodem"
+          },
+          {
+            "category": "PILOTY I KLUCZYKI SMART",
+            "title": "Właściwy pilot. Zaprogramowany do Twojego auta.",
+            "image": "/assets/images/right-car-keys.png",
+            "alt": "Dwa klucze samochodowe z pilotami obok urządzenia do programowania we wnętrzu auta"
+          }
         ]
       },
       "nova-services": {
-        "title": "Nasze usługi",
-        "description": "Kompleksowe wsparcie na każdym etapie, od koncepcji po wdrożenie i dalszy rozwój.",
-        "linkLabel": "Zobacz wszystkie",
-        "linkHref": "#uslugi",
+        "title": "Klucze na co dzień.",
+        "description": "Dorabianie, wymiana i programowanie do Twojego auta.",
+        "linkLabel": "Umów wizytę",
+        "linkHref": "#schedule-appointment",
         "items": [
-          { "number": "01.", "icon": "palette", "title": "UX/UI Design", "description": "Nowoczesny i funkcjonalny design dopasowany do Twojej marki. Projektujemy doświadczenia, które są intuicyjne i wspierają cele biznesowe." },
-          { "number": "02.", "icon": "browser", "title": "Strony internetowe", "description": "Szybkie, responsywne i zoptymalizowane rozwiązania dla biznesu. Tworzymy strony, które dobrze wyglądają i skutecznie prowadzą do kontaktu." },
-          { "number": "03.", "icon": "paint-brush", "title": "Identyfikacja wizualna", "description": "Spójny wizerunek, który wyróżnia markę i buduje zaufanie. Łączymy strategię, typografię i detale w jeden rozpoznawalny kierunek." },
-          { "number": "04.", "icon": "lifebuoy", "title": "Wsparcie i rozwój", "description": "Stała opieka i rozwój strony po uruchomieniu projektu. Pomagamy utrzymać stronę aktualną, sprawną i gotową na kolejne etapy." }
-        ]
+          {
+            "number": "01.",
+            "icon": "key",
+            "title": "Dorabianie kluczy",
+            "description": "Docinamy klucze samochodowe, w tym wiele kluczy z transponderem i kluczy o wysokim stopniu zabezpieczenia. Podaj rok, markę i model, aby sprawdzić zgodność."
+          },
+          {
+            "number": "02.",
+            "icon": "cpu",
+            "title": "Programowanie kluczy",
+            "description": "Docięty klucz może wymagać programowania, aby uruchomić auto. Programujemy zgodne klucze z transponderem i chipem do wielu marek i modeli."
+          },
+          {
+            "number": "03.",
+            "icon": "car",
+            "title": "Piloty i kluczyki smart",
+            "description": "Wymień zgubiony lub zużyty pilot albo kluczyk do auta uruchamianego przyciskiem. Dobieramy i programujemy zgodne zamienniki do Twojego samochodu."
+          },
+          {
+            "number": "04.",
+            "icon": "copy",
+            "title": "Klucze zapasowe i zamienne",
+            "description": "Masz tylko jeden klucz lub potrzebujesz drugiego dla innego kierowcy? Pomożemy dobrać zapasowy albo zamienny klucz i sprawdzimy opcje po utracie wszystkich kluczy."
+          }
+        ],
+        "id": "services"
       },
       "nova-team": {
-        "title": "Ludzie, którzy tworzą wartość",
-        "description": "Jesteśmy zespołem specjalistów, którzy łączą pasję do technologii z wyczuciem dobrego designu. Każdy projekt dopasowujemy do marki, jej celów i odbiorców.",
-        "image": "/assets/images/t001-nova/t001-nova-about-team.webp",
-        "imageAlt": "Zespół Nova podczas pracy nad projektem",
-        "checks": ["Strategiczne podejście", "Indywidualne podejście", "Realne wsparcie"],
-        "teamCount": "10+",
-        "teamLabel": "specjalistów w zespole",
-        "teamAriaLabel": "Nasz zespół",
-        "teamAvatars": [
-          { "src": "/assets/images/t001-nova/t001-nova-avatar-01@220.webp", "alt": "Członkini zespołu Nova" },
-          { "src": "/assets/images/t001-nova/t001-nova-avatar-02@220.webp", "alt": "Członek zespołu Nova" },
-          { "src": "/assets/images/t001-nova/t001-nova-avatar-03@220.webp", "alt": "Członkini zespołu Nova" }
+        "sectionId": "about",
+        "title": "Twój lokalny specjalista od kluczy.",
+        "description": "Local Key w Elbridge, NY świadczy usługi automotive locksmith dla kierowców z Syracuse i okolic oraz hrabstw Onondaga i Oswego. Dorabiamy zapasowe klucze i programujemy piloty do niemal każdej marki i modelu, z szerokim wyborem na miejscu.",
+        "image": "",
+        "imageAlt": "",
+        "checks": [
+          "Cięcie i programowanie w jednym miejscu",
+          "Klucze, piloty i kluczyki smart",
+          "Dobór do roku, marki i modelu samochodu"
         ],
-        "buttonLabel": "Poznaj zespół",
-        "buttonHref": "#zespol"
+        "teamCount": "Elbridge",
+        "teamLabel": "Nowy Jork | Obsługujemy Central NY",
+        "teamAriaLabel": "Nasza lokalizacja",
+        "teamAvatars": [],
+        "buttonLabel": "Zobacz obszar obsługi",
+        "buttonHref": "/pl/#service-area"
       },
-      "faq3": {
-        "title": "Najczęściej zadawane pytania",
-        "description": "Najważniejsze informacje o współpracy, procesie i efektach, które mogą Państwa interesować przed rozpoczęciem projektu.",
-        "tagline": "FAQ",
-        "items": [
-          { "q": "Ile trwa przygotowanie nowej strony internetowej?", "a": "Standardowy projekt realizujemy zwykle w ciągu 2 do 4 tygodni. Termin zależy od zakresu strony, liczby podstron oraz szybkości przekazania materiałów." },
-          { "q": "Czy pomagacie w przygotowaniu treści i zdjęć?", "a": "Tak. Możemy uporządkować istniejące materiały, przygotować strukturę treści oraz wskazać kierunek dla zdjęć i grafik, aby całość była spójna z marką." },
-          { "q": "Czy strona będzie dobrze działać na telefonie?", "a": "Tak. Projektujemy od początku z myślą o telefonach, tabletach i komputerach. Każdy kluczowy widok sprawdzamy w kilku szerokościach ekranu." },
-          { "q": "Czy po publikacji mogę samodzielnie edytować stronę?", "a": "Tak. Przygotowujemy strukturę tak, aby najważniejsze treści można było później łatwo aktualizować. Po wdrożeniu przekazujemy również krótką instrukcję obsługi." }
+      "steps-numbered": {
+        "sectionId": "how-it-works",
+        "eyebrow": "DOBIERZMY TWÓJ KLUCZ",
+        "headingLines": [
+          "Potrzebujesz klucza?",
+          "Zacznij od tych kroków."
+        ],
+        "steps": [
+          {
+            "num": "01",
+            "title": "Podaj swój samochód",
+            "description": "Przygotuj rok produkcji, markę i model. Powiedz, czy potrzebujesz zapasowego klucza, zamiennika, czy nie masz już żadnego działającego klucza."
+          },
+          {
+            "num": "02",
+            "title": "Sprawdź właściwy klucz",
+            "description": "Dobierzemy klucz lub pilot, sprawdzimy dostępność i omówimy cenę oraz szczegóły obsługi w Twojej lokalizacji."
+          },
+          {
+            "num": "03",
+            "title": "Cięcie i programowanie",
+            "description": "Po potwierdzeniu szczegółów ustalimy cięcie i programowanie wymagane przez Twój samochód. Przygotuj posiadane klucze i piloty."
+          }
         ]
       },
-      "testimonial-v2": {
-        "title": "Opinie, które mówią więcej",
-        "description": "Zobacz, jak współpraca z nami przełożyła się na lepszy wizerunek i wyniki naszych klientów.",
-        "tagline": "Opinie klientów",
-        "avatarAltPrefix": "Zdjęcie",
+      "feature-grid": {
+        "sectionId": "service-area",
+        "data": {
+          "heading": "Z Elbridge do całego regionu Syracuse.",
+          "intro": "Szukasz usługi automotive locksmith, dorabiania kluczy lub programowania pilotów w okolicy Syracuse? Działamy w Elbridge i obsługujemy Syracuse, hrabstwa Onondaga i Oswego oraz okoliczne miejscowości Central New York. Podaj lokalizację, aby potwierdzić szczegóły obsługi.",
+          "items": [
+            {
+              "icon": "map-pin",
+              "title": "Elbridge i zachodnie przedmieścia",
+              "description": "Lokalne usługi kluczy samochodowych dla Elbridge, Jordan, Camillus, Marcellus, Skaneateles, Fairmount i Solvay."
+            },
+            {
+              "icon": "map-trifold",
+              "title": "Syracuse i pobliskie miejscowości",
+              "description": "Obsługujemy Syracuse, Liverpool, Baldwinsville, Clay, Cicero, North Syracuse, Brewerton, Mattydale, Salina, Lysander, East Syracuse, DeWitt, Fayetteville, Manlius i Jamesville."
+            },
+            {
+              "icon": "navigation-arrow",
+              "title": "Fulton i hrabstwo Oswego",
+              "description": "Dorabianie kluczy i programowanie pilotów dla kierowców z Fulton, Oswego, Phoenix, Central Square, Hannibal, Mexico, Palermo i Pennellville."
+            }
+          ]
+        }
+      },
+      "faq3": {
+        "sectionId": "faq",
+        "title": "Pytania o klucze samochodowe.",
+        "description": "Co warto wiedzieć przed dorobieniem klucza lub zaprogramowaniem pilota.",
+        "tagline": "PYTANIA I ODPOWIEDZI",
         "items": [
-          { "quote": "Nowa strona uporządkowała naszą komunikację i od pierwszego tygodnia zaczęła przyciągać lepsze zapytania.", "author": "Anna Kowalska", "initials": "AK", "role": "Założycielka marki premium", "avatar": "https://i.pravatar.cc/150?u=anna-kowalska" },
-          { "quote": "Proces był konkretny, sprawny i bardzo dobrze prowadzony. Dostaliśmy stronę, która naprawdę pasuje do naszej marki.", "author": "Michał Nowak", "initials": "MN", "role": "Dyrektor operacyjny", "avatar": "https://i.pravatar.cc/150?u=michal-nowak" },
-          { "quote": "W końcu możemy pokazać nasze realizacje w sposób, który oddaje ich jakość. Klienci od razu to zauważyli.", "author": "Karolina Wójcik", "initials": "KW", "role": "Właścicielka studia", "avatar": "https://i.pravatar.cc/150?u=karolina-wojcik" }
+          {
+            "q": "Czy oferujecie automotive locksmith w Elbridge, NY?",
+            "a": "Tak. Local Key działa w Elbridge, NY i specjalizuje się w dorabianiu kluczy samochodowych, kluczach zamiennych oraz programowaniu kluczy i pilotów. Obsługujemy Syracuse i okolice Central New York."
+          },
+          {
+            "q": "Do jakich samochodów dorabiacie i programujecie klucze?",
+            "a": "Obsługujemy niemal każdą markę i model, w tym wiele samochodów amerykańskich, azjatyckich i europejskich. Dostępne opcje zależą od roku, modelu i systemu klucza. Podaj te informacje, a potwierdzimy możliwości."
+          },
+          {
+            "q": "Czy macie klucze i piloty na miejscu?",
+            "a": "Tak. Mamy szeroki wybór kluczy, pilotów i kluczyków smart. Dostępność zależy od samochodu, więc przed przyjazdem potwierdź z nami właściwy klucz lub pilot."
+          },
+          {
+            "q": "Czy programujecie kluczyki do uruchamiania przyciskiem?",
+            "a": "Programujemy zgodne kluczyki smart i piloty do wielu aut uruchamianych przyciskiem, a także klucze z transponderem i zintegrowanym pilotem. Sprawdzimy opcje dla Twojego samochodu."
+          },
+          {
+            "q": "Czy pomożecie, jeśli zgubiłem wszystkie klucze?",
+            "a": "Podaj rok, markę i model oraz poinformuj, że nie masz działającego klucza. Potwierdzimy, czy możemy pomóc w Twoim przypadku i co będzie potrzebne do wykonania zamiennika."
+          },
+          {
+            "q": "Ile kosztuje nowy klucz lub pilot?",
+            "a": "Cena zależy od samochodu, rodzaju klucza lub pilota oraz wymaganego cięcia i programowania. Podaj rok, markę, model i informację o działającym kluczu, aby omówić dokładną wycenę."
+          },
+          {
+            "q": "Czy obsługujecie Syracuse i pobliskie miejscowości?",
+            "a": "Tak. Działamy w Elbridge, NY i obsługujemy Syracuse i okolice, w tym Jordan, Camillus, Liverpool, Baldwinsville, Clay, Cicero, North Syracuse, East Syracuse, DeWitt, Fayetteville, Manlius i Skaneateles oraz Fulton i hrabstwo Oswego. Podaj lokalizację, aby potwierdzić szczegóły."
+          },
+          {
+            "q": "Czy zaprogramujecie pilot kupiony w internecie?",
+            "a": "Zapytaj nas przed zamówieniem. Numer części, częstotliwość i zgodność muszą pasować do samochodu. Niektóre używane lub zamienne piloty mogą nie nadawać się do programowania. Sprawdzimy Twój pilot lub dobierzemy dostępny na miejscu."
+          },
+          {
+            "q": "Jakie informacje przygotować?",
+            "a": "Przygotuj rok, markę i model auta, swoją lokalizację oraz informację, czy masz działający klucz. Powiedz, czy potrzebujesz zwykłego klucza, pilota czy kluczyka smart. Przy ustalaniu obsługi wyjaśnimy, jakie dodatkowe dane samochodu lub potwierdzenie własności będą potrzebne."
+          }
         ]
       }
     },
     "footer": {
-      "eyebrow": "Twoja marka zasługuje na więcej",
-      "heading": "Zacznijmy tworzyć razem",
-      "description": "Porozmawiajmy o Twoim projekcie i sprawdźmy, jak możemy pomóc w rozwoju Twojej marki.",
-      "primaryLabel": "Skontaktuj się",
-      "primaryHref": "#kontakt",
-      "secondaryLabel": "Poznaj ofertę",
-      "secondaryHref": "#uslugi",
+      "eyebrow": "AUTOMOTIVE LOCKSMITH / ELBRIDGE, NY",
+      "heading": "Dobierzmy Twój klucz.",
+      "description": "Podaj rok, markę i model auta, swoją lokalizację oraz informację, czy masz działający klucz. Sprawdzimy zgodność, dostępność i cenę klucza lub pilota.",
+      "primaryLabel": "Umów wizytę",
+      "primaryHref": "#schedule-appointment",
+      "secondaryLabel": "Poznaj nasze usługi",
+      "secondaryHref": "/pl/#services",
       "legalLinks": [
-        { "label": "Polityka prywatności", "href": "/polityka-prywatnosci/" },
-        { "label": "Cookies", "href": "/cookies/" }
+        {
+          "label": "Prywatność",
+          "href": "/polityka-prywatnosci/"
+        },
+        {
+          "label": "Pliki cookies",
+          "href": "/cookies/"
+        }
       ],
       "footerLinks": [
-        { "label": "O nas", "href": "#zespol" },
-        { "label": "Usługi", "href": "#uslugi" },
-        { "label": "Realizacje", "href": "#realizacje" },
-        { "label": "Opinie", "href": "#opinie" }
+        {
+          "label": "Usługi",
+          "href": "/pl/#services"
+        },
+        {
+          "label": "Klucze na miejscu",
+          "href": "/pl/#keys-in-stock"
+        },
+        {
+          "label": "Obszar obsługi",
+          "href": "/pl/#service-area"
+        },
+        {
+          "label": "Pytania",
+          "href": "/pl/#faq"
+        }
       ],
-      "ariaLegal": "Dokumenty prawne",
+      "ariaLegal": "Informacje o prywatności",
       "ariaNavigation": "Nawigacja stopki",
-      "copyright": "Wszelkie prawa zastrzeżone.",
-      "attributionPrefix": "Projekt i wdrożenie: ",
+      "copyright": "Local Key | Elbridge, Nowy Jork. Wszelkie prawa zastrzeżone.",
+      "locationLabel": "Elbridge, NY | Obsługujemy Syracuse i okolice",
+      "phoneLabel": "Zadzwoń w sprawie klucza",
+      "emailLabel": "Wyślij informacje o aucie",
+      "attributionPrefix": "Design and development by ",
       "attributionLinkLabel": "WebScale",
       "attributionLinkHref": "https://webscale.pl"
     }
   },
   "en": {
     "page": {
-      "title": "Nova, websites for ambitious brands",
-      "description": "We create modern websites that strengthen your image, attract clients and support business growth.",
-      "heading": "New possibilities for ambitious brands"
-    },
-    "demoBanner": {
-      "label": "This template was designed and built by WebScale.",
-      "downloadLabel": "Download template",
-      "downloadHref": "https://github.com/Wiktorkulas51/template-t001-nova",
-      "customizeLabel": "Request customization",
-      "customizeHref": "https://webscale.pl/?utm_source=nova-demo&utm_medium=banner&utm_campaign=t001-nova-custom"
+      "title": "Auto Locksmith in Elbridge, NY | Car Keys & Fobs | Local Key",
+      "description": "Local Key, your automotive locksmith in Elbridge, NY. Car key cutting, replacement keys and fob programming. Keys in stock. Serving Greater Syracuse.",
+      "heading": "Car keys & fobs in Elbridge, NY"
     },
     "navigation": {
       "menu": [
-        { "label": "About us", "href": "#zespol" },
-        { "label": "Services", "href": "#services" },
-        { "label": "Selected work", "href": "#realizacje" },
-        { "label": "Reviews", "href": "#opinie" }
+        {
+          "label": "Key services",
+          "href": "/#services"
+        },
+        {
+          "label": "Keys in stock",
+          "href": "/#keys-in-stock"
+        },
+        {
+          "label": "Service area",
+          "href": "/#service-area"
+        },
+        {
+          "label": "FAQs",
+          "href": "/#faq"
+        }
       ],
       "cta": {
-        "label": "Start a project",
-        "hoverLabel": "Let's talk",
-        "href": "#contact"
+        "label": "Schedule appointment",
+        "hoverLabel": "Let's find a time",
+        "href": "#schedule-appointment"
       },
       "aria": {
         "menuOpen": "Open navigation menu",
@@ -176,106 +334,254 @@
     },
     "sections": {
       "nova-hero-wireframe": {
-        "eyebrow": "STRATEGY / DESIGN / TECHNOLOGY",
-        "heading": "New possibilities for",
-        "headingAccent": "ambitious brands",
-        "description": "We create modern websites that strengthen your image, attract clients and turn your business goals into real growth.",
-        "primaryCTA": { "label": "Start a project", "href": "#contact" },
-        "secondaryCTA": { "label": "Meet the team", "href": "#zespol" },
-        "trustedBy": "Trusted by",
-        "trustItems": ["MODO", "LUMI", "KOVO", "NOMA", "ASPEKT"],
-        "image": "/assets/images/t001-nova/t001-nova-hero.webp",
-        "imageAlt": "Strategist working at a laptop",
+        "eyebrow": "YOUR LOCAL AUTOMOTIVE LOCKSMITH / ELBRIDGE, NY",
+        "heading": "Car keys & fobs in",
+        "headingAccent": "Elbridge, NY.",
+        "description": "Your local automotive locksmith for spare keys, replacements and key fob programming. We cut and program keys for nearly every make and model, with a wide selection in stock. Serving Greater Syracuse and Central New York.",
+        "primaryCTA": {
+          "label": "Schedule an appointment",
+          "href": "#schedule-appointment"
+        },
+        "secondaryCTA": {
+          "label": "Explore key services",
+          "href": "/#services"
+        },
+        "trustedBy": "Serving",
+        "trustItems": [
+          "ELBRIDGE",
+          "SYRACUSE",
+          "OSWEGO",
+          "& BEYOND"
+        ],
+        "image": "/assets/images/hero.png",
+        "imageAlt": "Car keys and fobs beside a key programming tablet and key cutting machine",
         "stats": [
-          { "value": "2000+", "label": "Projects delivered" },
-          { "value": "10+", "label": "Years of experience" },
-          { "value": "800+", "label": "Product hours" },
-          { "value": "150M+", "label": "Client revenue generated" }
+          {
+            "value": "Cut",
+            "label": "Car key cutting"
+          },
+          {
+            "value": "Program",
+            "label": "Keys & key fobs"
+          },
+          {
+            "value": "In stock",
+            "label": "A wide selection of keys & fobs"
+          },
+          {
+            "value": "Local",
+            "label": "Elbridge & Greater Syracuse"
+          }
         ]
       },
       "nova-projects": {
-        "title": "Turning ideas into real outcomes",
-        "description": "We combine strategic thinking, refined design and modern technology to create websites that look great and deliver measurable value.",
-        "linkLabel": "See selected work",
-        "linkHref": "#realizacje",
+        "sectionId": "keys-in-stock",
+        "title": "The right key starts here.",
+        "description": "We keep a wide selection of car keys and key fobs in stock. From a spare for the family car to a replacement remote, tell us what you drive and we'll check the right match for your vehicle.",
+        "linkLabel": "Schedule an appointment",
+        "linkHref": "#schedule-appointment",
         "items": [
-          { "category": "Websites", "title": "A premium brand with a new website", "image": "/assets/images/t001-nova/t001-nova-project-laptop.webp", "alt": "Laptop showing a website project" },
-          { "category": "Brand identity", "title": "A new identity for an ambitious brand", "image": "/assets/images/t001-nova/t001-nova-project-building.webp", "alt": "Modern building used as a project example" }
+          {
+            "category": "CAR KEYS",
+            "title": "A spare today. One less worry tomorrow.",
+            "image": "/assets/images/two-key-fobs.png",
+            "alt": "Two car key fobs held in front of a parked vehicle"
+          },
+          {
+            "category": "KEY FOBS & REMOTES",
+            "title": "The right fob. Programmed for your car.",
+            "image": "/assets/images/right-car-keys.png",
+            "alt": "Two remote car keys beside a key programming tablet inside a vehicle"
+          }
         ]
       },
       "nova-services": {
-        "title": "Our services",
-        "description": "End-to-end support, from the first concept to launch and continued growth.",
-        "linkLabel": "Explore our services",
-        "linkHref": "#services",
+        "title": "Locksmith services.",
+        "description": "Cutting, replacement & programming for your vehicle.",
+        "linkLabel": "Schedule an appointment",
+        "linkHref": "#schedule-appointment",
         "items": [
-          { "number": "01.", "icon": "palette", "title": "UX/UI design", "description": "Modern and functional design tailored to your brand. We create experiences that feel intuitive and support business goals." },
-          { "number": "02.", "icon": "browser", "title": "Websites", "description": "Fast, responsive and conversion-focused websites for modern businesses. Every screen has a clear purpose." },
-          { "number": "03.", "icon": "paint-brush", "title": "Brand identity", "description": "A consistent visual identity that helps your brand stand out and build trust through strategy, type and detail." },
-          { "number": "04.", "icon": "lifebuoy", "title": "Support and growth", "description": "Ongoing support after launch. We help keep your website current, reliable and ready for the next stage." }
-        ]
+          {
+            "number": "01.",
+            "icon": "key",
+            "title": "Car key cutting",
+            "description": "Need a new key cut? We cut automotive keys to match your vehicle, including many transponder and high-security key styles. Share your year, make and model to check compatibility."
+          },
+          {
+            "number": "02.",
+            "icon": "cpu",
+            "title": "Key programming",
+            "description": "A cut key may also need programming to start your car. We program compatible transponder and chipped keys for a wide range of makes and models."
+          },
+          {
+            "number": "03.",
+            "icon": "car",
+            "title": "Key fobs & remotes",
+            "description": "Replace a missing or worn-out fob, remote, or push-to-start smart key. We match and program compatible replacements for your specific vehicle."
+          },
+          {
+            "number": "04.",
+            "icon": "copy",
+            "title": "Spare & replacement keys",
+            "description": "Down to your last key, or need an extra for another driver? We help you get a spare or replacement and confirm the available options if all your keys are lost."
+          }
+        ],
+        "id": "services"
       },
       "nova-team": {
-        "title": "People who create value",
-        "description": "We are a team of specialists who combine a passion for technology with a sharp eye for good design. Every project is shaped around the brand, its goals and its audience.",
-        "image": "/assets/images/t001-nova/t001-nova-about-team.webp",
-        "imageAlt": "Nova team working on a project",
-        "checks": ["Strategic thinking", "Tailored approach", "Real support"],
-        "teamCount": "10+",
-        "teamLabel": "specialists on the team",
-        "teamAriaLabel": "Our team",
-        "teamAvatars": [
-          { "src": "/assets/images/t001-nova/t001-nova-avatar-01@220.webp", "alt": "Nova team member" },
-          { "src": "/assets/images/t001-nova/t001-nova-avatar-02@220.webp", "alt": "Nova team member" },
-          { "src": "/assets/images/t001-nova/t001-nova-avatar-03@220.webp", "alt": "Nova team member" }
+        "sectionId": "about",
+        "title": "Your local car key locksmith.",
+        "description": "Local Key is an automotive locksmith based in Elbridge, NY, helping drivers across Greater Syracuse, Onondaga County and Oswego County. From cutting a spare to programming a new fob, we work with nearly every make and model and keep a broad selection of keys and fobs in stock.",
+        "image": "",
+        "imageAlt": "",
+        "checks": [
+          "Key cutting and programming in one place",
+          "Keys, fobs, remotes and smart keys",
+          "Compatibility checked for your year, make and model"
         ],
-        "buttonLabel": "Meet the team",
-        "buttonHref": "#zespol"
+        "teamCount": "Elbridge",
+        "teamLabel": "New York | Serving Central NY",
+        "teamAriaLabel": "Our home base",
+        "teamAvatars": [],
+        "buttonLabel": "See our service area",
+        "buttonHref": "/#service-area"
       },
-      "faq3": {
-        "title": "Frequently asked questions",
-        "description": "The key information about our process, collaboration and outcomes before you start a project.",
-        "tagline": "FAQ",
-        "items": [
-          { "q": "How long does it take to prepare a new website?", "a": "A standard project usually takes 2 to 4 weeks. The timeline depends on the scope, number of pages and how quickly the materials are provided." },
-          { "q": "Can you help prepare the copy and images?", "a": "Yes. We can organise existing materials, prepare the content structure and recommend a direction for imagery and graphics that fits the brand." },
-          { "q": "Will the website work well on mobile?", "a": "Yes. We design for phones, tablets and desktops from the start. Every key view is checked across several screen sizes." },
-          { "q": "Can I edit the website after launch?", "a": "Yes. We structure the project so the most important content can be updated easily. We also provide a short handover guide after launch." }
+      "steps-numbered": {
+        "sectionId": "how-it-works",
+        "eyebrow": "LET'S FIND YOUR KEY",
+        "headingLines": [
+          "From “I need a key”",
+          "to your next step."
+        ],
+        "steps": [
+          {
+            "num": "01",
+            "title": "Tell us what you drive",
+            "description": "Have your vehicle's year, make and model ready. Let us know whether you need a spare, a replacement, or help because every key is missing."
+          },
+          {
+            "num": "02",
+            "title": "Check the right match",
+            "description": "We confirm the key or fob your vehicle needs, check stock, and discuss pricing and service arrangements for your location."
+          },
+          {
+            "num": "03",
+            "title": "Get it cut & programmed",
+            "description": "Once the details are confirmed, we arrange the cutting and programming your vehicle requires. Have any existing keys and fobs ready."
+          }
         ]
       },
-      "testimonial-v2": {
-        "title": "Reviews that say more",
-        "description": "See how working with us translated into a stronger image and better results for our clients.",
-        "tagline": "Client reviews",
-        "avatarAltPrefix": "Photo of",
+      "feature-grid": {
+        "sectionId": "service-area",
+        "data": {
+          "heading": "Elbridge roots. Greater Syracuse reach.",
+          "intro": "Looking for an automotive locksmith, car key cutting or key fob programming near Syracuse? Local Key is based in Elbridge and serves Greater Syracuse, Onondaga County, Oswego County and nearby Central New York communities. Share your location to confirm service arrangements.",
+          "items": [
+            {
+              "icon": "map-pin",
+              "title": "Elbridge & western suburbs",
+              "description": "Your local car key locksmith for Elbridge, Jordan, Camillus, Marcellus, Skaneateles, Fairmount and Solvay."
+            },
+            {
+              "icon": "map-trifold",
+              "title": "Syracuse & surrounding suburbs",
+              "description": "Serving Syracuse, Liverpool, Baldwinsville, Clay, Cicero, North Syracuse, Brewerton, Mattydale, Salina, Lysander, East Syracuse, DeWitt, Fayetteville, Manlius and Jamesville."
+            },
+            {
+              "icon": "navigation-arrow",
+              "title": "Fulton & Oswego County",
+              "description": "Car key cutting and fob programming for drivers in Fulton, Oswego, Phoenix, Central Square, Hannibal, Mexico, Palermo and Pennellville."
+            }
+          ]
+        }
+      },
+      "faq3": {
+        "sectionId": "faq",
+        "title": "Your car key questions, answered.",
+        "description": "What to know before getting a key cut or a fob programmed.",
+        "tagline": "CAR KEY FAQ",
         "items": [
-          { "quote": "The new website finally gave our communication a clear structure and started bringing better enquiries from the first week.", "author": "Anna Kowalska", "initials": "AK", "role": "Founder of a premium brand", "avatar": "https://i.pravatar.cc/150?u=anna-kowalska" },
-          { "quote": "The process was focused, efficient and very well guided. We received a website that genuinely fits our brand.", "author": "Michal Nowak", "initials": "MN", "role": "Operations director", "avatar": "https://i.pravatar.cc/150?u=michal-nowak" },
-          { "quote": "We can finally present our work in a way that reflects its quality. Clients noticed the difference straight away.", "author": "Karolina Wojcik", "initials": "KW", "role": "Studio owner", "avatar": "https://i.pravatar.cc/150?u=karolina-wojcik" }
+          {
+            "q": "Are you an automotive locksmith in Elbridge, NY?",
+            "a": "Yes. Local Key is based in Elbridge, NY and specializes in automotive key cutting, replacement keys, key programming and key fobs. We serve drivers throughout Greater Syracuse and nearby Central New York communities."
+          },
+          {
+            "q": "What vehicles can you cut and program keys for?",
+            "a": "We work with nearly every make and model, including many domestic, Asian and European vehicles. The exact key and programming options depend on the year, model and key system. Share those details so we can confirm your vehicle."
+          },
+          {
+            "q": "Do you have keys and key fobs in stock?",
+            "a": "Yes. We carry a wide selection of automotive keys, fobs and remotes in stock. Inventory varies by vehicle, so check with us before making a trip to confirm the correct key or fob is available."
+          },
+          {
+            "q": "Can you program a push-to-start smart key?",
+            "a": "We program compatible smart keys and key fobs for many push-to-start vehicles, as well as transponder keys and remote-head keys. We'll check the correct option for your vehicle."
+          },
+          {
+            "q": "Can you help if I have lost all my car keys?",
+            "a": "Tell us your vehicle's year, make and model and that no working keys remain. We'll confirm whether we can help with your specific vehicle and explain what is needed for a replacement."
+          },
+          {
+            "q": "How much does a replacement key or key fob cost?",
+            "a": "Pricing depends on your vehicle, the key or fob it uses, and the cutting and programming required. Share your year, make, model and whether you have a working key so we can discuss an accurate quote."
+          },
+          {
+            "q": "Do you serve Syracuse and the surrounding towns?",
+            "a": "Yes. We’re based in Elbridge, NY and serve Greater Syracuse, including Jordan, Camillus, Liverpool, Baldwinsville, Clay, Cicero, North Syracuse, East Syracuse, DeWitt, Fayetteville, Manlius and Skaneateles, plus Fulton and Oswego County communities. Let us know where you are to confirm arrangements."
+          },
+          {
+            "q": "Can you program a key or fob I bought online?",
+            "a": "Ask us before ordering. The part number, frequency and compatibility need to match your vehicle, and some used or aftermarket fobs may not be suitable for programming. We can check what you have and discuss an in-stock option."
+          },
+          {
+            "q": "What information should I have ready?",
+            "a": "Start with your vehicle's year, make and model, your location, and whether any working keys remain. Tell us if you need a standard key, remote, or push-to-start fob. We'll explain any additional vehicle or ownership information needed when arranging service."
+          }
         ]
       }
     },
     "footer": {
-      "eyebrow": "Your brand deserves more",
-      "heading": "Let's create together",
-      "description": "Tell us about your project and let's see how we can help your brand grow.",
-      "primaryLabel": "Get in touch",
-      "primaryHref": "#contact",
-      "secondaryLabel": "Explore services",
-      "secondaryHref": "#services",
+      "eyebrow": "AUTOMOTIVE LOCKSMITH / ELBRIDGE, NY",
+      "heading": "Let's get you a key.",
+      "description": "Tell us your vehicle's year, make and model, your location, and whether you have a working key. We'll check compatibility, stock and pricing for your next key or fob.",
+      "primaryLabel": "Schedule an appointment",
+      "primaryHref": "#schedule-appointment",
+      "secondaryLabel": "Explore key services",
+      "secondaryHref": "/#services",
       "legalLinks": [
-        { "label": "Privacy policy", "href": "/polityka-prywatnosci/" },
-        { "label": "Cookies", "href": "/cookies/" }
+        {
+          "label": "Privacy policy",
+          "href": "/polityka-prywatnosci/"
+        },
+        {
+          "label": "Cookies",
+          "href": "/cookies/"
+        }
       ],
       "footerLinks": [
-        { "label": "About us", "href": "#zespol" },
-        { "label": "Services", "href": "#services" },
-        { "label": "Selected work", "href": "#realizacje" },
-        { "label": "Reviews", "href": "#opinie" }
+        {
+          "label": "Key services",
+          "href": "/#services"
+        },
+        {
+          "label": "Keys in stock",
+          "href": "/#keys-in-stock"
+        },
+        {
+          "label": "Service area",
+          "href": "/#service-area"
+        },
+        {
+          "label": "FAQs",
+          "href": "/#faq"
+        }
       ],
       "ariaLegal": "Legal documents",
       "ariaNavigation": "Footer navigation",
-      "copyright": "All rights reserved.",
+      "copyright": "Local Key | Elbridge, New York. All rights reserved.",
+      "locationLabel": "Based in Elbridge, NY | Serving Greater Syracuse",
+      "phoneLabel": "Call about your key",
+      "emailLabel": "Email your vehicle details",
       "attributionPrefix": "Design and development by ",
       "attributionLinkLabel": "WebScale",
       "attributionLinkHref": "https://webscale.pl"

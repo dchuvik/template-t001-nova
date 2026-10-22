@@ -41,62 +41,7 @@ export function buildRouteMap(): RouteMap {
     }
   }
 
-  const jsonPaths = [
-    'src/data/navigation/header.json',
-    'src/data/navigation/footer.json',
-    'src/data/pages/index.json',
-  ];
-
-  for (const relPath of jsonPaths) {
-    const absPath = path.resolve(relPath);
-    if (fs.existsSync(absPath)) {
-      try {
-        const data = JSON.parse(fs.readFileSync(absPath, 'utf8'));
-        collectRoutesFromData(data, validRoutes);
-      } catch {
-        // skip unparseable JSON
-      }
-    }
-  }
-
-  const textPaths = ['src/config/template.ts'];
-  const hrefRegex = /["'`]\/([^"'`\s?]+)["'`]/g;
-  for (const relPath of textPaths) {
-    const absPath = path.resolve(relPath);
-    if (fs.existsSync(absPath)) {
-      const content = fs.readFileSync(absPath, 'utf8');
-      let m: RegExpExecArray | null;
-      while ((m = hrefRegex.exec(content)) !== null) {
-        const route = '/' + m[1].replace(/\/$/, '');
-        if (route !== '/' && !/\.(png|jpg|jpeg|gif|svg|webp|ico|css|js|woff2?|ttf|eot|mp4|webm|pdf|zip)$/i.test(route)) {
-          validRoutes.add(route);
-        }
-      }
-    }
-  }
-
   return { validRoutes };
-}
-
-function collectRoutesFromData(data: unknown, routes: Set<string>, maxDepth = 10): void {
-  if (maxDepth <= 0) return;
-  if (typeof data === 'string') {
-    if (data.startsWith('/') && !data.startsWith('//') && !data.startsWith('http')) {
-      if (/\.(png|jpg|jpeg|gif|svg|webp|ico|css|js|woff2?|ttf|eot|mp4|webm|pdf|zip)$/i.test(data)) return;
-      const route = data.split('#')[0].split('?')[0].replace(/\/$/, '') || '/';
-      if (route !== '/') routes.add(route);
-    }
-    return;
-  }
-  if (Array.isArray(data)) {
-    for (const item of data) collectRoutesFromData(item, routes, maxDepth - 1);
-    return;
-  }
-  if (data && typeof data === 'object') {
-    for (const val of Object.values(data as Record<string, unknown>)) {
-      collectRoutesFromData(val, routes, maxDepth - 1);
-    }
-  }
 }
 
 export function isExternal(href: string): boolean {
@@ -104,7 +49,7 @@ export function isExternal(href: string): boolean {
 }
 
 export function isSpecial(href: string): boolean {
-  return /^(mailto:|tel:|javascript:|data:)/i.test(href);
+  return /^(mailto:|tel:|sms:|javascript:|data:)/i.test(href);
 }
 
 export function isAnchorOnly(href: string): boolean {

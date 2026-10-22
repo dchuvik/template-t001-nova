@@ -2,19 +2,19 @@
   "enabled": false,
   "title": "404",
   "heading": "Page not found",
-  "body": "It looks like this page does not exist or has been moved.",
+  "body": "This page is missing, but your next car key is a good place to start. Explore key cutting and fob programming in Elbridge, NY.",
   "cta1": {
-    "label": "Back to home",
-    "hover": "Going back!",
-    "href": "/"
+    "label": "Explore key services",
+    "hover": "See our services",
+    "href": "/#services"
   },
   "cta2": {
-    "label": "Contact us",
-    "hover": "Write to us",
-    "href": "#kontakt"
+    "label": "Ask about your key",
+    "hover": "Get key details",
+    "href": "/#contact"
   },
   "seo": {
-    "title": "Page not found",
+    "title": "Page not found | Local Key, Elbridge NY",
     "description": "The page you are looking for does not exist."
   },
   "sections": []

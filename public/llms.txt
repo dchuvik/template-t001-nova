@@ -1,15 +1,36 @@
-# Nova Template
+# Local Key — Automotive Locksmith in Elbridge, New York
 
-A business website template (Astro + Tailwind v4) for creative agencies, design studios and ambitious brands, with a modern design, dark mode, a component gallery and a blog.
+Local Key is an automotive locksmith based in Elbridge, NY, serving Greater Syracuse and Central New York.
 
-## Structure
+## Services
 
-- Homepage: selected work, services, testimonials and contact
-- Blog: articles about services and pricing (`src/content/blog`)
-- Legal pages: privacy policy, terms and cookies
+- Car key cutting, including compatible transponder and high-security keys.
+- Transponder and chipped key programming.
+- Key fob, remote and push-to-start smart key programming.
+- Spare and replacement car keys for nearly every make and model, subject to vehicle compatibility.
+- A wide selection of keys and fobs in stock; confirm availability for the specific vehicle.
 
-## Machine-readable notes
+## Service area
 
+Elbridge, Jordan, Camillus, Marcellus, Skaneateles, Fairmount, Solvay, Syracuse, Liverpool, Baldwinsville, Clay, Cicero, North Syracuse, Brewerton, Mattydale, Salina, Lysander, East Syracuse, DeWitt, Fayetteville, Manlius, Jamesville, Fulton, Oswego, Phoenix, Central Square, Hannibal, Mexico, Palermo, Pennellville and nearby communities. Service arrangements depend on the vehicle and location.
+
+## Customer information
+
+Have the vehicle's year, make and model ready, along with your location and whether any working keys remain. Confirm compatibility, stock and pricing before arranging service.
+
+## Pages
+
+- Homepage: /
+- Locksmith services: /#services
+- Keys and fobs in stock: /#keys-in-stock
+- How it works: /#how-it-works
+- Service area: /#service-area
+- FAQs: /#faq
+- Schedule an appointment: /#schedule-appointment
+- Contact: /#contact
+- Polish homepage: /pl/
 - Sitemap: /sitemap-index.xml
-- Contact: contact form on the homepage
-- Language: configurable with the `lang` prop in `Layout`
+
+## Appointment requests
+
+The appointment form prepares a text to 315-552-1553 with contact, vehicle, service, location and preferred date/time details. Customers review and send the message in their own texting app. A requested appointment is confirmed by Local Key’s reply. The form does not send email or submit customer details to a web server.

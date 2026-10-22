@@ -1,0 +1,118 @@
+{
+  "en": {
+    "title": "Schedule an appointment",
+    "description": "Tell us what you drive and when you would like service. We’ll confirm availability by text.",
+    "close": "Close appointment form",
+    "required": "Fields marked * are required. All appointment times are Eastern.",
+    "labels": {
+      "name": "Your name",
+      "phone": "Your mobile number",
+      "vehicleYear": "Vehicle year",
+      "vehicleModel": "Make & model",
+      "service": "What do you need?",
+      "workingKey": "Do you have a working key?",
+      "preferredDate": "Preferred date",
+      "preferredTime": "Preferred time",
+      "location": "Your town or ZIP code",
+      "notes": "Anything else? (optional)"
+    },
+    "placeholders": {
+      "name": "First and last name",
+      "phone": "Your number for a reply",
+      "vehicleYear": "e.g. 2020",
+      "vehicleModel": "e.g. Toyota Camry",
+      "select": "Choose an option",
+      "location": "e.g. Elbridge",
+      "notes": "Tell us about your key or fob, or any timing preferences."
+    },
+    "services": [
+      { "value": "Spare key", "label": "Spare key" },
+      { "value": "Replacement key", "label": "Replacement key" },
+      { "value": "Key fob or remote", "label": "Key fob or remote" },
+      { "value": "Smart key programming", "label": "Smart key programming" },
+      { "value": "All keys lost", "label": "All keys lost" },
+      { "value": "Help choosing the right key", "label": "I’m not sure yet" }
+    ],
+    "workingKeys": [
+      { "value": "Yes", "label": "Yes" },
+      { "value": "No", "label": "No" }
+    ],
+    "times": [
+      { "value": "Morning", "label": "Morning" },
+      { "value": "Afternoon", "label": "Afternoon" },
+      { "value": "Flexible", "label": "I’m flexible" }
+    ],
+    "submit": "Continue to text",
+    "copy": "Copy request",
+    "handoff": "Opens a text to {phone}. Review your request and tap Send in your texting app. We’ll reply to confirm the appointment.",
+    "fallback": "No texting app on this device? Copy your request and text it to {phone} from your phone.",
+    "ready": "Your request is ready in your texting app. Tap Send there. Your appointment is confirmed once we reply.",
+    "copied": "Request copied. Paste it into a text to {phone} and tap Send.",
+    "copyFallback": "Select and copy the request below, then text it to {phone}.",
+    "preview": "Your appointment request",
+    "phoneError": "Enter a mobile number with 7 to 15 digits.",
+    "dateError": "Choose today or a future date.",
+    "privacy": "Your details are used to prepare your text and aren’t submitted to this website.",
+    "privacyLink": "Privacy policy",
+    "messageHeading": "Local Key appointment request",
+    "messageFooter": "Please confirm availability and pricing by text."
+  },
+  "pl": {
+    "title": "Umów wizytę",
+    "description": "Podaj swój samochód i preferowany termin. Potwierdzimy dostępność SMS-em.",
+    "close": "Zamknij formularz wizyty",
+    "required": "Pola oznaczone * są wymagane. Wszystkie terminy według czasu wschodniego USA.",
+    "labels": {
+      "name": "Imię i nazwisko",
+      "phone": "Twój numer telefonu",
+      "vehicleYear": "Rok samochodu",
+      "vehicleModel": "Marka i model",
+      "service": "Czego potrzebujesz?",
+      "workingKey": "Czy masz działający klucz?",
+      "preferredDate": "Preferowana data",
+      "preferredTime": "Preferowana pora",
+      "location": "Miejscowość lub kod pocztowy",
+      "notes": "Dodatkowe informacje (opcjonalnie)"
+    },
+    "placeholders": {
+      "name": "Imię i nazwisko",
+      "phone": "Numer do odpowiedzi",
+      "vehicleYear": "np. 2020",
+      "vehicleModel": "np. Toyota Camry",
+      "select": "Wybierz opcję",
+      "location": "np. Elbridge",
+      "notes": "Opisz klucz lub pilot oraz ewentualne preferencje dotyczące terminu."
+    },
+    "services": [
+      { "value": "Spare key", "label": "Zapasowy klucz" },
+      { "value": "Replacement key", "label": "Klucz zamienny" },
+      { "value": "Key fob or remote", "label": "Pilot samochodowy" },
+      { "value": "Smart key programming", "label": "Programowanie kluczyka smart" },
+      { "value": "All keys lost", "label": "Wszystkie klucze zgubione" },
+      { "value": "Help choosing the right key", "label": "Jeszcze nie wiem" }
+    ],
+    "workingKeys": [
+      { "value": "Yes", "label": "Tak" },
+      { "value": "No", "label": "Nie" }
+    ],
+    "times": [
+      { "value": "Morning", "label": "Rano" },
+      { "value": "Afternoon", "label": "Po południu" },
+      { "value": "Flexible", "label": "Dowolna pora" }
+    ],
+    "submit": "Przejdź do SMS-a",
+    "copy": "Kopiuj zapytanie",
+    "handoff": "Otworzy SMS na numer {phone}. Sprawdź treść i naciśnij Wyślij w aplikacji wiadomości. Odpowiemy z potwierdzeniem terminu.",
+    "fallback": "Nie masz aplikacji SMS na tym urządzeniu? Skopiuj zapytanie i wyślij je ze swojego telefonu na {phone}.",
+    "ready": "Zapytanie jest gotowe w aplikacji wiadomości. Naciśnij tam Wyślij. Wizyta zostanie potwierdzona w naszej odpowiedzi.",
+    "copied": "Zapytanie skopiowane. Wklej je do SMS-a na {phone} i wyślij.",
+    "copyFallback": "Zaznacz i skopiuj poniższe zapytanie, a następnie wyślij SMS na {phone}.",
+    "preview": "Twoje zapytanie o wizytę",
+    "phoneError": "Podaj numer telefonu zawierający od 7 do 15 cyfr.",
+    "dateError": "Wybierz dzisiejszą lub przyszłą datę.",
+    "privacy": "Twoje dane służą do przygotowania SMS-a i nie są wysyłane do tej witryny.",
+    "privacyLink": "Polityka prywatności",
+    "messageHeading": "Local Key — zapytanie o wizytę",
+    "messageFooter": "Proszę o potwierdzenie dostępności i ceny SMS-em."
+  }
+}

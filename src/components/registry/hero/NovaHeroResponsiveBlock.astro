@@ -5,8 +5,6 @@ import Heading from "@components/ui/atoms/Heading.astro";
 import Text from "@components/ui/atoms/Text.astro";
 import Button from "@components/ui/atoms/Button.astro";
 import SmartImage from "@components/ui/atoms/SmartImage.astro";
-import jsonData from "@data/sections/nova-hero-wireframe.json";
-import { ACTIVE_TEMPLATE } from "@config/template";
 
 type Stat = { value: string; label: string };
 
@@ -27,18 +25,17 @@ interface Props {
 }
 
 const props = Astro.props as Props;
-const fallback = ACTIVE_TEMPLATE === "nova" ? undefined : jsonData;
-const eyebrow = props.eyebrow ?? fallback?.eyebrow;
-const heading = props.heading ?? fallback?.heading;
-const headingAccent = props.headingAccent ?? fallback?.headingAccent;
-const description = props.description ?? fallback?.description;
-const primaryCTA = props.primaryCTA ?? fallback?.primaryCTA;
-const secondaryCTA = props.secondaryCTA ?? fallback?.secondaryCTA;
-const trustedBy = props.trustedBy ?? fallback?.trustedBy;
-const trustItems = props.trustItems ?? fallback?.trustItems ?? [];
-const image = props.image ?? fallback?.image;
-const imageAlt = props.imageAlt ?? fallback?.imageAlt ?? "";
-const stats = props.stats ?? fallback?.stats ?? [];
+const eyebrow = props.eyebrow;
+const heading = props.heading;
+const headingAccent = props.headingAccent;
+const description = props.description;
+const primaryCTA = props.primaryCTA;
+const secondaryCTA = props.secondaryCTA;
+const trustedBy = props.trustedBy;
+const trustItems = props.trustItems ?? [];
+const image = props.image;
+const imageAlt = props.imageAlt ?? "";
+const stats = props.stats ?? [];
 ---
 
 <Section

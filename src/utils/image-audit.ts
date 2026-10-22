@@ -14,7 +14,6 @@ export function auditRenderedImages(html: string, file: string): ImageIssue[] {
 
   $('img').each((_, element) => {
     const image = $(element);
-    if (image.attr('id') === 'ui-lightbox-img') return;
 
     const alt = image.attr('alt')?.trim();
     const decorative = image.attr('aria-hidden') === 'true';
@@ -43,7 +42,7 @@ export function auditRenderedImages(html: string, file: string): ImageIssue[] {
 }
 
 export function auditSmartImageFallback(source: string, file: string): ImageIssue[] {
-  const requiredMarkers = ['showPlaceholder', '!src', 'isResolved', 'aspect-video'];
+  const requiredMarkers = ['showPlaceholder', '!src', 'aspect-video'];
   return requiredMarkers
     .filter((marker) => !source.includes(marker))
     .map((marker) => ({

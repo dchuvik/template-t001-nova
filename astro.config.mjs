@@ -4,7 +4,6 @@ import { fileURLToPath, URL } from 'node:url';
 import { SITE_URL } from './site.config.mjs';
 
 import tailwindcss from '@tailwindcss/vite';
-import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
@@ -28,7 +27,6 @@ export default defineConfig({
   // sitemap-index.xml and sent Google a contradictory signal (as for webscale).
   // serialize adds lastmod (build date), because the integration does not add it itself.
   integrations: [
-    react(),
     sitemap({
       filter: (page) => !page.includes('/dev/') && !page.includes('/qa/'),
       serialize(item) {
@@ -81,7 +79,6 @@ export default defineConfig({
         '@data': fileURLToPath(new URL('./src/data', import.meta.url)),
         '@styles': fileURLToPath(new URL('./src/styles', import.meta.url)),
         '@utils': fileURLToPath(new URL('./src/utils', import.meta.url)),
-        '@config': fileURLToPath(new URL('./src/config', import.meta.url)),
       }
     },
     // Dlaczego noDiscovery: false: Astro (do 7.0.9) w client environment nie

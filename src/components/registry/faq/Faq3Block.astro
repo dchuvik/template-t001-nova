@@ -3,8 +3,6 @@ import Section from "@components/ui/layout/Section.astro";
 import SectionHeader from "@components/ui/molecules/SectionHeader.astro";
 import Heading from "@components/ui/atoms/Heading.astro";
 import Text from "@components/ui/atoms/Text.astro";
-import data from "@data/sections/faq3.json";
-import { ACTIVE_TEMPLATE } from "@config/template";
 
 interface FaqItem {
   q: string;
@@ -31,10 +29,9 @@ const {
   class: className = "",
 } = Astro.props as Props;
 
-const fallback = ACTIVE_TEMPLATE === "nova" ? undefined : data;
-const resolvedTitle = title || fallback?.title || "";
-const resolvedDescription = description || fallback?.description || "";
-const list = items && items.length > 0 ? items : fallback?.items ?? [];
+const resolvedTitle = title || "";
+const resolvedDescription = description || "";
+const list = items ?? [];
 ---
 
 <Section id={sectionId} tone="page" class:list={["ui-bg-page", className]}>

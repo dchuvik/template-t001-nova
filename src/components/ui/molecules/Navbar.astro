@@ -1,5 +1,10 @@
 ---
-import NavbarRoot from "./Navbar/index.astro";
+import NavStyles from './Navbar/shared/NavStyles.astro';
+import Floating from './Navbar/layouts/Floating.astro';
+import type { NovaLocale } from '@utils/nova-i18n';
+interface Props { theme?: 'light' | 'dark' | 'transparent'; locale?: NovaLocale; }
+const { theme = 'light', locale = 'en' } = Astro.props;
 ---
 
-<NavbarRoot {...Astro.props} />
+<NavStyles />
+<Floating theme={theme} locale={locale} />

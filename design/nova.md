@@ -1,5 +1,5 @@
 ---
-name: Nova, Creative Agency
+name: Local Key
 colors:
   surface: "#fffdf9"
   surface-dim: "#f4f0e9"
@@ -122,7 +122,7 @@ animations:
 
 # Nova, Visual Direction
 
-Nova is an elegant template for a creative studio, digital agency or premium brand. The site should feel calm, refined and capable. Clear hierarchy, strong photography and controlled contrast are the priorities.
+Local Key is an automotive locksmith in Elbridge, NY. The site should feel clear, practical and dependable, with strong photography and easy appointment requests.
 
 ## Composition Principles
 
@@ -152,5 +152,5 @@ Nova production assets live in `public/assets/images/t001-nova/`. The source ref
 
 - Do not use purple gradients, arbitrary badges or decorative dots.
 - Do not make sections dense with too many cards or evenly repeated columns.
-- Do not add new fonts from a CDN. Use `Outfit` for headings and `Satoshi` for body text.
+- Use the self-hosted `Satoshi` font for headings and body text.
 - Do not apply colors directly in components. Colors must come from the `nova` profile tokens.

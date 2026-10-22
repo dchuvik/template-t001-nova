@@ -7,7 +7,6 @@ const scanPatterns = [
   'src/components/**/*.astro',
   'src/pages/**/*.astro',
   'src/data/**/*.json',
-  'src/config/template.ts',
   'src/layouts/**/*.astro',
 ];
 
@@ -29,7 +28,7 @@ if (fs.existsSync(distDir)) {
   targets = targets.concat(distHtml.map((f) => `dist/${f}`));
 
   // Static Astro output is the authoritative route list for generated pages,
-  // including concrete paths produced from dynamic routes such as blog slugs.
+  // including all language versions.
   for (const file of distHtml) {
     const route = `/${file.replace(/\\/g, '/').replace(/index\.html$/, '').replace(/\.html$/, '')}`;
     routes.validRoutes.add(route === '/' ? '/' : route.replace(/\/$/, ''));

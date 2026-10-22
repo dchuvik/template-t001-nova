@@ -15,6 +15,7 @@ export function formatInternalLink(href: string | null | undefined): string {
     href.startsWith('http') || 
     href.startsWith('mailto:') || 
     href.startsWith('tel:') ||
+    href.startsWith('sms:') ||
     href.startsWith('javascript:')
   ) {
     return href;

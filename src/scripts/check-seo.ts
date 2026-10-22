@@ -1,11 +1,11 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { SITE_URL } from '../../site.config.mjs';
 
 const isClientMode = process.argv.includes('--client');
 const root = process.cwd();
 const htmlPath = path.join(root, 'dist/index.html');
 const seoPath = path.join(root, 'src/data/global/seo.json');
-const siteConfigPath = path.join(root, 'site.config.mjs');
 
 function fail(message: string): never {
   console.error(`check:seo: ${message}`);
@@ -19,8 +19,7 @@ const seo = JSON.parse(fs.readFileSync(seoPath, 'utf8')) as {
   index?: boolean;
   follow?: boolean;
 };
-const siteConfig = fs.readFileSync(siteConfigPath, 'utf8');
-const siteUrl = siteConfig.match(/export const SITE_URL = ['"]([^'"]+)['"]/i)?.[1]?.replace(/\/$/, '') ?? '';
+const siteUrl = SITE_URL.replace(/\/$/, '');
 
 const getMeta = (attribute: 'name' | 'property', value: string): string => {
   const pattern = new RegExp(String.raw`<meta\s+[^>]*${attribute}=["']${value}["'][^>]*>`, 'i');
@@ -43,17 +42,21 @@ if (!ogImage) fail('Brak og:image.');
 if (schemaCount === 0) fail('Brak JSON-LD schema.');
 
 const robotsContent = robots.match(/content=["']([^"']+)["']/i)?.[1] ?? '';
-const shouldIndex = isClientMode || seo.index === true;
+const isPreview = ['localhost', '127.0.0.1'].includes(new URL(siteUrl).hostname)
+  || ['deploy-preview', 'branch-deploy'].includes(process.env.CONTEXT ?? '')
+  || process.env.STAGING === 'true';
+const shouldIndex = seo.index === true && !isPreview;
 const expectedIndex = shouldIndex ? 'index' : 'noindex';
 const expectedFollow = seo.follow !== false ? 'follow' : 'nofollow';
 
-if (!robotsContent.includes(expectedIndex) || !robotsContent.includes(expectedFollow)) {
+if (!robotsContent.split(/,\s*/).includes(expectedIndex) || !robotsContent.split(/,\s*/).includes(expectedFollow)) {
   fail(`Niepoprawna polityka robots. Oczekiwano "${expectedIndex}, ${expectedFollow}", otrzymano "${robotsContent}".`);
 }
 
 if (isClientMode && !seo.index) {
   fail('Tryb klienta wymaga seo.index=true w src/data/global/seo.json.');
 }
+if (isClientMode && isPreview) fail('Set PUBLIC_SITE_URL to the real public domain and disable preview mode before checking production SEO.');
 
 if (!/^https?:\/\//i.test(siteUrl)) fail('SITE_URL w site.config.mjs musi byc pelnym adresem HTTP albo HTTPS.');
 if (!canonical.includes(siteUrl)) fail(`Canonical nie wskazuje na SITE_URL (${siteUrl}).`);
@@ -88,4 +91,4 @@ if (sitemapFile) {
   fail('Brak dist/sitemap-0.xml ani dist/sitemap-index.xml. Sprawdź integrację @astrojs/sitemap.');
 }
 
-console.log(`check:seo: OK, ${isClientMode ? 'projekt klienta indeksowalny' : 'starter bezpiecznie ustawiony jako noindex'}, ${schemaCount} schema`);
+console.log(`check:seo: OK, ${shouldIndex ? 'index, follow' : 'preview noindex, follow'}, ${schemaCount} schema`);

@@ -1,0 +1,13 @@
+---
+import Layout from '@layouts/Layout.astro';
+import PageBuilder from '@components/PageBuilder.astro';
+import { getNovaCopy, type NovaLocale } from '@utils/nova-i18n';
+import { SITE_LOCALE } from '../../site.config.mjs';
+
+const locale: NovaLocale = SITE_LOCALE;
+const copy = getNovaCopy(locale);
+---
+
+<Layout title={copy.page.title} description={copy.page.description} lang={locale} locale={locale} fullBleedTop>
+  <PageBuilder locale={locale} />
+</Layout>

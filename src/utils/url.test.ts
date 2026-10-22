@@ -30,6 +30,7 @@ describe('URL Utilities', () => {
       expect(formatInternalLink('https://google.com')).toBe('https://google.com');
       expect(formatInternalLink('mailto:test@example.com')).toBe('mailto:test@example.com');
       expect(formatInternalLink('tel:+48123456789')).toBe('tel:+48123456789');
+      expect(formatInternalLink('sms:+13155521553?body=Hello%20Local%20Key')).toBe('sms:+13155521553?body=Hello%20Local%20Key');
     });
 
     it('should handle standalone anchors', () => {

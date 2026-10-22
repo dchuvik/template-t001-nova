@@ -4,9 +4,6 @@
 @import "./foundations.css";
 @import "./components.css";
 @import "./navigation.css";
-@import "./section-patterns.css";
-@import "./ui-theme.css";
-@import "./patterns.css";
 @import "./motion.css";
 @import "./accordion.css";
 /* Override'y per-theme na koncu: najpierw musi wladowac sie root Tailwinda,

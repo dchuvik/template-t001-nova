@@ -2,15 +2,8 @@
 import companyRaw from '@data/global/company.json';
 import seo from '@data/global/seo.json';
 import type { CompanyConfig } from '@/types/config';
-import { getSocialUrls } from '@utils/socials';
 import { SITE_URL } from '../../../../site.config.mjs';
 
-interface Props {
-	/** `affiliate` — tylko lekki WebSite (strona afiliacyjna), bez LocalBusiness z danych globalnych. */
-	template?: 'default' | 'affiliate';
-}
-
-const { template = 'default' } = Astro.props;
 
 // Why: JSON.stringify does not escape '<', which inside set:html
 // could be interpreted as an HTML tag opening (XSS vector via
@@ -19,49 +12,43 @@ const jsonLd = (data: object): string => JSON.stringify(data).replace(/</g, '\\u
 
 const company = companyRaw as CompanyConfig;
 const siteBase = SITE_URL.replace(/\/$/, '');
-const affiliateWebsiteSchema = {
-	'@context': 'https://schema.org',
-	'@type': 'WebSite',
-	name: 'Affiliate',
-	url: `${siteBase}/affiliate/`,
-	description:
-		'Aktualne promocje bankowe, bonusy powitalne i oferty partnerskie w jednym miejscu.',
-};
 
 const schema = {
 	'@context': 'https://schema.org',
-	'@type': 'LocalBusiness',
+	'@type': 'Locksmith',
 	name: company.fullName || company.name,
 	description: company.description || seo.defaultDescription,
 	image: `${siteBase}/og-image.png`,
 	'@id': siteBase,
 	url: siteBase,
-	telephone: company.phone,
-	email: company.email,
-	priceRange: company.priceRange || '$$',
+	telephone: /^[+\d\s().-]+$/.test(company.phone) && company.phone.replace(/\D/g, '').length >= 10 ? company.phone : undefined,
+	email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(company.email) ? company.email : undefined,
+	priceRange: company.priceRange || undefined,
 	address: {
 		'@type': 'PostalAddress',
-		streetAddress: company.address,
+		streetAddress: company.address && !company.address.includes('[') ? company.address : undefined,
 		addressLocality: company.city,
-		postalCode: company.zipCode,
-		addressCountry: 'PL',
+		addressRegion: company.state,
+		postalCode: company.zipCode && !company.zipCode.includes('[') ? company.zipCode : undefined,
+		addressCountry: company.country,
 	},
-	geo: {
+	geo: company.geo ? {
 		'@type': 'GeoCoordinates',
-		latitude: company.geo?.lat || 52.4064,
-		longitude: company.geo?.lng || 16.9252,
-	},
-	openingHoursSpecification: [
-		{
-			'@type': 'OpeningHoursSpecification',
-			dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-			// Optional chaining: hours may be empty/missing in company.json,
-			// then schema falls back to default hours instead of throwing TypeError.
-			opens: company.hours?.split(' - ')?.[0]?.split(': ')?.pop() ?? '08:00',
-			closes: company.hours?.split(' - ')?.[1] ?? '16:00',
-		},
-	],
-	sameAs: getSocialUrls(company),
+		latitude: company.geo.lat,
+		longitude: company.geo.lng,
+	} : undefined,
+	areaServed: company.areaServed?.map((name) => ({
+		'@type': 'City',
+		name: `${name}, NY`,
+	})),
+	hasOfferCatalog: company.services?.length ? {
+		'@type': 'OfferCatalog',
+		name: 'Automotive key services',
+		itemListElement: company.services.map((name) => ({
+			'@type': 'Offer',
+			itemOffered: { '@type': 'Service', name },
+		})),
+	} : undefined,
 };
 
 const websiteSchema = {
@@ -72,13 +59,5 @@ const websiteSchema = {
 };
 ---
 
-{
-	template === 'affiliate' ? (
-		<script type="application/ld+json" set:html={jsonLd(affiliateWebsiteSchema)} />
-	) : (
-		<>
-			<script type="application/ld+json" set:html={jsonLd(schema)} />
-			<script type="application/ld+json" set:html={jsonLd(websiteSchema)} />
-		</>
-	)
-}
+<script type="application/ld+json" set:html={jsonLd(schema)} />
+<script type="application/ld+json" set:html={jsonLd(websiteSchema)} />

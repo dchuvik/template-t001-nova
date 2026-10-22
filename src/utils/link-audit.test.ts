@@ -24,6 +24,9 @@ describe('link audit', () => {
     it('detects tel', () => {
       expect(isSpecial('tel:+48123456789')).toBe(true);
     });
+    it('detects SMS handoff links', () => {
+      expect(isSpecial('sms:+13155521553?body=Appointment')).toBe(true);
+    });
     it('detects javascript', () => {
       expect(isSpecial('javascript:void(0)')).toBe(true);
     });

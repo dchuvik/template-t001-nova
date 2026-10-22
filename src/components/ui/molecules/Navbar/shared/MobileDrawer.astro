@@ -1,5 +1,4 @@
 ---
-import { getNavDrawerSocialLinks } from "./nav-drawer-social";
 import LanguageSwitch from "./LanguageSwitch.astro";
 import { getNovaCopy, getNovaNavigationPath, type NovaLocale } from "@utils/nova-i18n";
 
@@ -11,7 +10,6 @@ interface Props {
 const { drawerMode = "mobile", locale = "pl" } = Astro.props;
 const headerData = getNovaCopy(locale).navigation;
 const rootVisibility = drawerMode === "mobile" ? "lg:hidden" : "";
-const socialLinks = getNavDrawerSocialLinks();
 
 // Why: submenu (children) wymagaja osobnej struktury wiersza:
 // link nawiguje, osobny przycisk rozwijania otwiera accordion.
@@ -23,14 +21,6 @@ type MenuItem = {
 };
 
 const menu = headerData.menu as MenuItem[];
-
-function linkRel(href: string): string | undefined {
-	return href.startsWith("http") ? "noopener noreferrer" : undefined;
-}
-
-function linkTarget(href: string): string | undefined {
-	return href.startsWith("http") ? "_blank" : undefined;
-}
 
 function hasChildren(item: MenuItem): boolean {
 	return Array.isArray(item.children) && item.children.length > 0;
@@ -167,19 +157,6 @@ function subId(index: number): string {
 					<LanguageSwitch locale={locale} />
 				</div>
 
-				<div class="ui-nav-drawer__social-row">
-					{socialLinks.map(({ href, icon, label }) => (
-						<a
-							href={href}
-							class="ui-nav-drawer__social-link"
-							aria-label={label}
-							rel={linkRel(href)}
-							target={linkTarget(href)}
-						>
-							<i class={icon} aria-hidden="true"></i>
-						</a>
-					))}
-				</div>
 			</div>
 		</div>
 	</aside>

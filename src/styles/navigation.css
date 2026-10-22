@@ -473,51 +473,6 @@
 
   /* ─── Social links ───────────────────────────────────────────────── */
 
-  .ui-nav-drawer__social-row {
-    display: flex;
-    flex-shrink: 0;
-    justify-content: center;
-    gap: 0.75rem;
-    opacity: 0;
-    translate: 0 0.75rem;
-    transition:
-      translate var(--ui-nav-anim-dur-fast) var(--ui-nav-anim-ease),
-      opacity 160ms linear;
-  }
-
-  .ui-nav-drawer-root.is-open .ui-nav-drawer__social-row {
-    opacity: 1;
-    translate: 0 0;
-    transition:
-      translate var(--ui-nav-anim-dur) var(--ui-nav-anim-ease)
-        calc(var(--ui-nav-anim-content-lag) + var(--ui-nav-anim-lag) * 2 + var(--ui-nav-anim-stagger) * 3),
-      opacity 240ms linear calc(var(--ui-nav-anim-content-lag) + var(--ui-nav-anim-lag) * 2);
-  }
-
-  .ui-nav-drawer__social-link {
-    display: flex;
-    height: 3rem;
-    width: 3rem;
-    align-items: center;
-    justify-content: center;
-    border-radius: var(--radius-full);
-    border: 1px solid color-mix(in oklab, white 18%, transparent);
-    background-color: color-mix(in oklab, white 8%, transparent);
-    font-size: 1.25rem;
-    line-height: 1;
-    color: var(--ui-nav-drawer-link);
-    text-decoration: none;
-    transition: color 150ms ease, border-color 150ms ease, background-color 150ms ease;
-  }
-
-  @media (hover: hover) {
-    .ui-nav-drawer__social-link:hover {
-      color: var(--ui-nav-drawer-link-hover);
-      border-color: color-mix(in oklab, var(--color-brand-accent) 55%, transparent);
-      background-color: color-mix(in oklab, var(--color-brand-accent) 12%, transparent);
-    }
-  }
-
   /* ─── Hamburger toggle ───────────────────────────────────────────── */
 
   .ui-nav-menu-toggle {
@@ -601,13 +556,11 @@
     .ui-nav-drawer-root .ui-nav-drawer__link,
     .ui-nav-drawer-root .ui-nav-drawer__expand,
     .ui-nav-drawer-root .ui-nav-drawer__cta,
-    .ui-nav-drawer-root .ui-nav-drawer__social-row,
     .ui-nav-drawer-root .ui-nav-drawer__close,
     .ui-nav-drawer-root .ui-nav-drawer-backdrop,
     .ui-nav-drawer-root.is-open .ui-nav-drawer__link,
     .ui-nav-drawer-root.is-open .ui-nav-drawer__expand,
     .ui-nav-drawer-root.is-open .ui-nav-drawer__cta,
-    .ui-nav-drawer-root.is-open .ui-nav-drawer__social-row,
     .ui-nav-drawer-root.is-open .ui-nav-drawer__close,
     .ui-nav-drawer-root.is-open .ui-nav-drawer-backdrop {
       transition: none;

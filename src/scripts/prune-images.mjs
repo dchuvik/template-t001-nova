@@ -4,7 +4,6 @@
 // Executed PO clean-dist.mjs to ignore dev-only pages.
 import fs from 'node:fs';
 import path from 'node:path';
-import { BUILD_SCOPE } from '../../site.config.mjs';
 
 const dist = path.resolve('dist');
 const PRUNABLE_DIRS = [
@@ -30,10 +29,6 @@ if (!fs.existsSync(dist)) {
   process.exit(0);
 }
 
-if (BUILD_SCOPE.images === false) {
-  console.log('prune-assets: wyłączone (BUILD_SCOPE.images = false)');
-  process.exit(0);
-}
 
 function toReference(fullPath) {
   return path.relative(dist, fullPath).split(path.sep).join('/').toLowerCase();

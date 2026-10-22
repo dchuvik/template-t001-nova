@@ -4,16 +4,15 @@ import Container from "@components/ui/layout/Container.astro";
 import Heading from "@components/ui/atoms/Heading.astro";
 import Text from "@components/ui/atoms/Text.astro";
 import Icon from "@components/ui/atoms/Icon.astro";
-import jsonData from "@data/sections/nova-services.json";
 
 type Service = { number: string; icon?: string; title: string; description: string };
 interface Props { id?: string; locale?: "en" | "pl"; title?: string; description?: string; linkLabel?: string; linkHref?: string; items?: Service[]; class?: string; }
 const props = Astro.props as Props;
-const title = props.title ?? jsonData.title;
-const description = props.description ?? jsonData.description;
-const linkLabel = props.linkLabel ?? jsonData.linkLabel;
-const linkHref = props.linkHref ?? jsonData.linkHref;
-const items = props.items ?? jsonData.items;
+const title = props.title;
+const description = props.description;
+const linkLabel = props.linkLabel;
+const linkHref = props.linkHref;
+const items = props.items ?? [];
 ---
 
 <Section id={props.id ?? (props.locale === "pl" ? "uslugi" : "services")} tone="page" class:list={["services-section", props.class]}>
@@ -196,7 +195,7 @@ const items = props.items ?? jsonData.items;
 
   @media (min-width: 64rem) {
     .nova-services-intro {
-      grid-template-columns: auto minmax(0, 1fr) auto;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr) auto;
       align-items: end;
       gap: clamp(1.5rem, 2vw, 2.5rem);
     }
@@ -207,7 +206,7 @@ const items = props.items ?? jsonData.items;
       justify-self: center;
       max-width: none;
       text-align: center;
-      white-space: nowrap;
+      white-space: normal;
     }
 
     .nova-services-link-wrap {

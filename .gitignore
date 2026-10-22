@@ -24,9 +24,6 @@ oauth-config.php
 # CMS - lokalny config wygenerowany (zawiera tylko local_backend, ale jest
 # pochodna cms:gen i nie ma sensu trzymac go w repo)
 
-# Client Assets
-src/assets/raw/
-!src/assets/raw/.gitkeep
 
 # macOS-specific files
 .DS_Store

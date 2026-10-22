@@ -1,13 +1,7 @@
 {
-  "defaultTitle": "Nova, websites for ambitious brands",
-  "defaultDescription": "We create modern websites that strengthen your image, attract clients and support business growth.",
+  "defaultTitle": "Auto Locksmith in Elbridge, NY | Car Keys & Fobs | Local Key",
+  "defaultDescription": "Local Key, your automotive locksmith in Elbridge, NY. Car key cutting, replacement keys and fob programming. Keys in stock. Serving Greater Syracuse.",
   "defaultOgImage": "/og-image.png",
-  "index": false,
-  "follow": true,
-  "analytics": {
-    "googleAnalyticsId": "",
-    "googleTagManagerId": "",
-    "facebookPixelId": "",
-    "clarityId": ""
-  }
+  "index": true,
+  "follow": true
 }

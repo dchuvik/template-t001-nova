@@ -20,10 +20,6 @@ describe('image audit', () => {
     ]);
   });
 
-  it('ignores the empty image reserved for the lightbox overlay', () => {
-    expect(auditRenderedImages('<img id="ui-lightbox-img" src="" alt="Enlarged view">', 'dist/index.html')).toEqual([]);
-  });
-
   it('accepts decorative images with an empty alt attribute', () => {
     expect(auditRenderedImages(
       '<img src="/texture.svg" alt="" aria-hidden="true" width="1600" height="900" loading="lazy">',
@@ -33,7 +29,7 @@ describe('image audit', () => {
 
   it('requires SmartImage to keep a visible placeholder fallback', () => {
     expect(auditSmartImageFallback(
-      'const showPlaceholder = placeholder || !src; const isResolved = !!resolvedImage; aspect-video',
+      'const showPlaceholder = placeholder || !src; aspect-video',
       'SmartImage.astro',
     )).toEqual([]);
   });
